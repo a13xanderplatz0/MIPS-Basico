@@ -1,0 +1,19 @@
+flowchart TD
+    A[INICIO] --> B[Mostrar cadena original]
+    B --> C[Inicializar registros]
+    C --> D[Cargar carácter actual]
+    D --> E{¿Fin de cadena?}
+    E -->|Sí| F[Mostrar resultado]
+    E -->|No| G{¿Es primer carácter o después de espacio?}
+    G -->|No| H{¿Es espacio?}
+    G -->|Sí| I{¿Es letra minúscula?}
+    I -->|Sí| J[Convertir a mayúscula]
+    I -->|No| K[Resetear flag]
+    J --> K
+    K --> H
+    H -->|Sí| L[Marcar próximo carácter para conversión]
+    H -->|No| M[Resetear flag]
+    L --> N[Siguiente carácter]
+    M --> N
+    N --> D
+    F --> O[FIN]
