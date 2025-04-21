@@ -1,0 +1,13 @@
+flowchart TD
+    inicio([INICIO]) --> solicitarN["Solicitar número de términos (n)"]
+    solicitarN --> mostrarInicio["Mostrar \"La serie Fibonacci de n términos es: 1\""]
+    mostrarInicio --> inicializar["Inicializar F(0)=0, F(1)=1, contador=2"]
+    inicializar --> condicion{contador < n?}
+    condicion -->|Sí| calcular["Calcular F(n) = F(n-2) + F(n-1)"]
+    calcular --> mostrarFn["Mostrar F(n)"]
+    mostrarFn --> mostrarComa["Mostrar \", \""]
+    mostrarComa --> incrementar["Incrementar contador"]
+    incrementar --> actualizar["Actualizar F(n-2) y F(n-1)"]
+    actualizar --> condicion
+    condicion -->|No| finalizarSalto["Mostrar salto de línea"]
+    finalizarSalto --> fin([FIN])
